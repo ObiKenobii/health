@@ -8,15 +8,18 @@
 
 <ui:composition template="/WEB-INF/template/BasicTemplate.xhtml">
 	<ui:define name="content">
+		<h3>Login</h3>
+		<p>
 		<h:form>
             <h:panelGrid columns="2">
-                <h:outputText value="login"></h:outputText>
+                <h:outputText value="Username:"></h:outputText>
                 <h:inputText value="#{loginBean.username}"></h:inputText>
-                <h:outputText value="password"></h:outputText>
+                <h:outputText value="Password:"></h:outputText>
                 <h:inputSecret value="#{loginBean.password}"></h:inputSecret>
             </h:panelGrid>
-            <h:commandButton value="login" action="#{loginBean.login}"></h:commandButton>
+            <p><h:commandButton value="Login" action="#{loginBean.login}"></h:commandButton></p>
         </h:form>
+        </p>
 	</ui:define>
 </ui:composition>
 </html>

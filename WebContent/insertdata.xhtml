@@ -8,15 +8,18 @@
 
 <ui:composition template="/WEB-INF/template/BasicTemplate.xhtml">
 	<ui:define name="content">
-		<h:outputText value="welcome #{loginBean.username}"></h:outputText>
+		<h3>
+		<h:outputText value="Welcome #{loginBean.username}. How are you today?"></h:outputText>
+		</h3>
+		
 	    <h:form>
             <h:panelGrid columns="2">
-                <h:outputText value="wellness-factor (0-4)"></h:outputText>
+                <h:outputText value="Wellness Factor (0-4):"></h:outputText>
                 <h:inputText value="#{dataBean.wellness}"></h:inputText>
-                <h:outputText value="comment"></h:outputText>
+                <h:outputText value="Comment:"></h:outputText>
                 <h:inputText value="#{dataBean.comment}"></h:inputText>
             </h:panelGrid>
-            <h:commandButton value="submit" action="#{dataBean.addDataset}"></h:commandButton>
+            <p><h:commandButton value="Submit" action="#{dataBean.addDataset}"></h:commandButton></p>
         </h:form>
 	</ui:define>
 </ui:composition>
