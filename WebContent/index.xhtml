@@ -8,7 +8,7 @@
 
 <ui:composition template="/WEB-INF/template/BasicTemplate.xhtml">
 	<ui:define name="content">
-		<h3>Login</h3>
+		<h3>Login.</h3>
 		<p>
 		<h:form>
             <h:panelGrid columns="2">
@@ -17,8 +17,11 @@
                 <h:outputText value="Password:"></h:outputText>
                 <h:inputSecret value="#{loginBean.password}"></h:inputSecret>
             </h:panelGrid>
-            <p><h:commandButton value="Login" action="#{loginBean.login}"></h:commandButton></p>
+            <h:commandButton value="Login" action="#{loginBean.login}"></h:commandButton>
         </h:form>
+        </p>
+        <p>
+        Hint: Currently, any username/password will work.
         </p>
 	</ui:define>
 </ui:composition>

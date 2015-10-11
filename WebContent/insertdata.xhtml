@@ -14,12 +14,55 @@
 		
 	    <h:form>
             <h:panelGrid columns="2">
-                <h:outputText value="Wellness Factor (0-4):"></h:outputText>
-                <h:inputText value="#{dataBean.wellness}"></h:inputText>
+            
+                <h:outputText value="Wellness Factor:"></h:outputText>
+                <h:selectOneMenu value="#{dataBean.wellness}">
+   					<f:selectItem itemValue="0" itemLabel="bad" />
+   					<f:selectItem itemValue="1" itemLabel="so-so" />
+   					<f:selectItem itemValue="2" itemLabel="medium" />
+   					<f:selectItem itemValue="3" itemLabel="fine" />
+   					<f:selectItem itemValue="4" itemLabel="great" />
+   				</h:selectOneMenu>
+   				
+   				<h:outputText value="Heartrate:"></h:outputText>
+                <h:inputText value="#{dataBean.heartrate}"></h:inputText>
+                
+                <h:outputText value="Weather:"></h:outputText>
+                <h:selectOneMenu value="#{dataBean.weather}">
+   					<f:selectItem itemValue="sunny" itemLabel="sunny" />
+   					<f:selectItem itemValue="cloudy" itemLabel="cloudy" />
+   					<f:selectItem itemValue="rainy" itemLabel="rainy" />
+   					<f:selectItem itemValue="snowy" itemLabel="snowy" />
+   					<f:selectItem itemValue="windy" itemLabel="windy" />
+   					<f:selectItem itemValue="stormy" itemLabel="stormy" />
+   					<f:selectItem itemValue="foggy" itemLabel="foggy" />
+   					<f:selectItem itemValue="lightning" itemLabel="lightning" />
+   					<f:selectItem itemValue="hail" itemLabel="hail" />
+   				</h:selectOneMenu>
+                
+                <h:outputText value="Outside temp. (°C):"></h:outputText>
+                <h:inputText value="#{dataBean.temperature}"></h:inputText>
+                
+                <h:outputText value="Humidity (%):"></h:outputText>
+                <h:inputText value="#{dataBean.humidity}"></h:inputText>
+                
+                <h:outputText value="Pollen"></h:outputText>
+                <h:selectManyCheckbox value="#{dataBean.pollen}">
+
+   					<f:selectItem itemValue="elm" itemLabel="Elm" />
+   					<f:selectItem itemValue="oak" itemLabel="Oak" />
+   					<f:selectItem itemValue="weeds" itemLabel="Weeds" />
+   					<f:selectItem itemValue="grass" itemLabel="Grass" />
+   					
+				</h:selectManyCheckbox>
+
                 <h:outputText value="Comment:"></h:outputText>
                 <h:inputText value="#{dataBean.comment}"></h:inputText>
+                
             </h:panelGrid>
+            
             <p><h:commandButton value="Submit" action="#{dataBean.addDataset}"></h:commandButton></p>
+            
         </h:form>
 	</ui:define>
 </ui:composition>
