@@ -16,7 +16,7 @@
                 <h:outputText value="comment"></h:outputText>
                 <h:inputText value="#{dataBean.comment}"></h:inputText>
             </h:panelGrid>
-            <h:commandButton value="submit" action="submit"></h:commandButton>
+            <h:commandButton value="submit" action="#{dataBean.addDataset}"></h:commandButton>
         </h:form>
 	</ui:define>
 </ui:composition>

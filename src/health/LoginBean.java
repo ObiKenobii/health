@@ -4,6 +4,10 @@ public class LoginBean {
 	private String username;
 	private String password;
 	
+	public boolean login(){
+		return true;
+	}
+	
 	public String getUsername() {
 		return username;
 	}
