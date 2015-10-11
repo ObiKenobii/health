@@ -9,12 +9,25 @@
 		<managed-bean-class>health.DataBean</managed-bean-class>
 		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>loginBean</managed-bean-name>
+		<managed-bean-class>health.LoginBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<navigation-rule>
+		<display-name>insertdata.xhtml</display-name>
+		<from-view-id>/insertdata.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>submit</from-outcome>
+			<to-view-id>/showdata.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
 	<navigation-rule>
 		<display-name>index.xhtml</display-name>
 		<from-view-id>/index.xhtml</from-view-id>
 		<navigation-case>
-			<from-outcome>submit</from-outcome>
-			<to-view-id>/showdata.xhtml</to-view-id>
+			<from-outcome>login</from-outcome>
+			<to-view-id>/insertdata.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
 
