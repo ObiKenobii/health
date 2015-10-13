@@ -31,7 +31,7 @@
 		<display-name>index.xhtml</display-name>
 		<from-view-id>/index.xhtml</from-view-id>
 		<navigation-case>
-			<from-outcome>true</from-outcome>
+			<from-outcome>user</from-outcome>
 			<to-view-id>/insertdata.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
