@@ -38,24 +38,30 @@ public class LoginBean {
 		/*
 		 * boolean valid = LoginDAO.validate(username, password);
 		 */
-		boolean valid = false;
 		
+		// Fake Authentifizierung
+		boolean valid = false;
+		boolean isAdmin = false;
 		if (getPassword().equals("passwort") && getUsername().equals("admin")) {
 			valid = true;
-			System.out.println("True");
-		}
-		if (valid) {
+			isAdmin = true;
+		} else if (getPassword().equals("passwort") && getUsername().equals("user")){
+			valid = true;
+		} if (valid) {
 			HttpSession session = SessionBean.getSession();
 			session.setAttribute("username", username);
-			System.out.println("Doppelt True");
-			return "user";
+			if (isAdmin){
+				return "admin";
+			} else {
+				return "true";
+			}
 		} else {
 			FacesContext.getCurrentInstance().addMessage(
 					null,
 					new FacesMessage(FacesMessage.SEVERITY_WARN,
 							"Incorrect Username and Passowrd",
 							"Please enter correct username and Password"));
-			return "login";
+			return "false";
 		}
 	}
 
